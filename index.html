@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冷蔵庫の中管理</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.svg">
+    <meta name="theme-color" content="#4CAF50">
+</head>
+<body>
+    <h1>冷蔵庫の中管理</h1>
 
+    <div class="input-section">
+        <input type="text" id="itemName" placeholder="食材の名前" aria-label="食材の名前">
+        <input type="date" id="expiryDate" aria-label="賞味期限">
+        <button onclick="addItem()">追加</button>
+    </div>
+
+    <ul id="itemList"></ul>
+
+    <script src="app.js"></script>
+    <script>
+        // Service Workerの登録
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
