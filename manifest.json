@@ -1,0 +1,17 @@
+{
+    "name": "冷蔵庫の中管理",
+    "short_name": "冷蔵庫",
+    "description": "冷蔵庫の中身と賞味期限を管理するシンプルなアプリ",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f6f9fc",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
